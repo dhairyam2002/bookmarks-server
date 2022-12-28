@@ -8,9 +8,7 @@ export class SignUpDto {
 
     @IsNotEmpty()
     hash: string;
-
     
-
     @IsNotEmpty()
     firstName: string;
 

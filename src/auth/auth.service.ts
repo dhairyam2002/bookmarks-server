@@ -13,7 +13,8 @@ export class AuthService {
 
     constructor(
         private prisma: PrismaService,
-        private jwt: JwtService) { }
+        private jwt: JwtService,
+        private config: ConfigService) { }
 
 
     async login(dto: SignInDto) {
@@ -71,7 +72,8 @@ export class AuthService {
         }
         return this.jwt.signAsync(payload, {
             expiresIn: "15m",
-            secret: "RKJNFKKKLFMKLDSF"
+            secret: this.config.get("JWT_SECRET")
+
         })
 
     }

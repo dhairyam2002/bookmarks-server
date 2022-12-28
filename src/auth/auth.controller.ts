@@ -21,7 +21,6 @@ export class AuthController{
     @Post('signup')
     signUp(@Body() dto : SignUpDto) {
 
-
         return this.authService.signUp(dto);
         //dto stands for data transfer object
 
